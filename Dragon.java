@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Dragon here.
+ * Description: .
  *
  * @author (your strName)
  * @version (a version number or a date)
