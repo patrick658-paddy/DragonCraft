@@ -18,11 +18,17 @@ public class TestClass
         Moves Splash = new Moves ("Splash", (byte)2, (short)250, false,(float)0, " ", (short)10, (short)0);
         Moves Water_Pump = new Moves ("Water Pump", (byte)2, (short)400, false, (float)0, " ", (short)20, (short)0);
         Moves Water_Shuriken = new Moves("Water Shuriken", (byte)2, (short)500, false, (float)0, "", (short)50, (short)0); 
+        Moves Cleanse = new Moves("Cleanse", (byte)2, (short)300, true, (float)0, " ", (short)50, (short)0);
         
-        Moves Freeze = new Moves ("Freeze", (byte)3, (short)200, false, (float)0.3, "Frozen", (short)40, (short)0);
+        Moves Freeze = new Moves ("Freeze", (byte)3, (short)100, false, (float)0.6, "Frozen", (short)30, (short)0);
+        Moves Icicle = new Moves ("Icicle", (byte)3, (short)400, false, (float)0.1, "Frozen", (short)40, (short)0);
+        Moves Glacier = new Moves ("Glacier", (byte)3, (short)500, false, (float)0.2, "Frozen", (short)50, (short)0);
         
+        Moves Earthquake = new Moves ("Earthquake", (byte)4, (short)400, false, (float)0, " ", (short)40, (short)0);
+        Moves Rockslide = new Moves ("Rock Slide", (byte)4, (short)500, false, (float)0, " ", (short)50, (short)0);
+        Moves Fissure = new Moves ("Fissure", (byte)4, (short)500, false, (float)0, " ", (short)50, (short)0);
         
-        Moves Earthquake = new Moves ("Earthquake", (byte)4, (short)350, false, (float)0, " ", (short)40, (short)0);
+        Moves Thunderbolt = new Moves ("Thunderbolt", (byte)5, (short)500, false, (float)0.5, "Shocked", (short)50, (short)0);
         
         Moves Bite = new Moves ("Bite", (byte)0, (short)400, false, (float)0, " ", (short)15, (short)0);
         
