@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Dragon here.
+ * Description: .
  *
  * @author (your strName)
  * @version (a version number or a date)
@@ -16,7 +16,7 @@ public class Dragon
     byte bytLevel;
     short shrXp;
     short shrArmor;
-    byte bytType; //1 = fire, 2 =  ice 3 = water, 4 = lighting 5 = earth  
+    byte bytType; //1 = fire, 2 =  ice, 3 = water, 4 = lighting, 5 = earth  
     ArrayList<Moves> moveList =new ArrayList<Moves>();
     String strStatusEffect;
     short shrSp;
@@ -58,9 +58,38 @@ public class Dragon
             //if it is a fire type move check enemy's dragon type and modify the damage base on the type chart
             if(target.bytType==2)
             {
-                damage*=1.5;
+                //if target is ice buff damage
+                damage*=1.2;
             }
-            
+            if(target.bytType==3)
+            {
+                //if target is water nerff damage
+                damage*=0.8;
+            }
+            if(target.bytType==5)
+            {
+                //if target is groud nerff damage
+                damage*=0.8;
+            }
+        }
+        else if(move.bytType==2)
+        {
+            //if the attack is ice type
+            if(target.bytType==2)
+            {
+                //if target is ice buff damage
+                damage*=1.2;
+            }
+            if(target.bytType==3)
+            {
+                //if target is water nerff damage
+                damage*=0.8;
+            }
+            if(target.bytType==5)
+            {
+                //if target is groud nerff damage
+                damage*=0.8;
+            }
         }
         
         
