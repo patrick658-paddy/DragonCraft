@@ -10,17 +10,23 @@ public class Player
 {
     String strName;
     ArrayList<Dragon> DragonList = new ArrayList<>();
-    byte bytDragon;
+    byte bytActiveDragon;
     
     public Player(String n, ArrayList<Dragon> d, byte ad)
     {
         this.strName = n;
         this.DragonList = d;
-        this.bytDragon = ad;
+        this.bytActiveDragon = ad;
     }
     
     public void pickDragon()
     {
         System.out.println("Pick your Dragon");
+        
+    }
+    
+    public void upgradeDragon(byte bytLevel)
+    {
+        
     }
 }
