@@ -17,5 +17,4 @@ public class TestClass
         Moves Bite = new Moves ("Bite", (byte)0, (short)400, false, (float)0, " ", (short)15, (short)0);
         Moves Heal = new Moves ("Heal", (byte)0, (short)200, true, (float)0, " ", (short)50, (short)0);
     }
-    
 }
