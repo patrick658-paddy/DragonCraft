@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Moves here.
+ * Description: .
  *
  * @author (your name)
  * @version (a version number or a date)
@@ -26,5 +26,12 @@ public class Moves
         this.strEffectName = s;
         this.shrSkillCost = c;
         this.shrSkillGrant = g;
+    }
+    
+    public String toString()
+    {
+        return this.strName + "\nType: " + this.bytType + "\nDamage: " + this.shrDmg + "\nHeal? " 
+        + this.bolIsHeal + "\nEffect:" + this.strEffectName + "\nSkill Cost: " + this.shrSkillCost + "\nSkill Grant: "
+        + this.shrSkillGrant;
     }
 }

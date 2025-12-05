@@ -1,10 +1,11 @@
 
 /**
- * Write a description of class Battlefield here.
+ * Description: .
  *
  * @author (Abdulla)
  * @version (a version number or a date)
  */
+//import random library to randomzie arena
 import java.util.Random;
 
 public class Battlefield 
@@ -46,21 +47,13 @@ public class Battlefield
             case 3: return baseDamage * waterModifier;
             case 4: return baseDamage * lightningModifier;
             case 5: return baseDamage * earthModifier;
+            
             default: return baseDamage;
         }
     }
 
     
-    public static final Battlefield Fire_Arena = new Battlefield("Fire Arena", 1.2f, 0.8f, 1.0f, 1.0f, 1.0f);
-
-    public static final Battlefield Ice_Arena = new Battlefield("Ice Arena", 0.8f, 1.2f,1.1f,1.0f,0.9f);
-
-    public static final Battlefield Lightning_Arena = new Battlefield("Lightning Arena",1.1f,0.9f,0.8f,1.2f,1.0f);
-
-    public static final Battlefield Water_Arena = new Battlefield("Water Arena",0.8f, 1.1f,1.5f, 1.2f, 0.8f);
-
-    public static final Battlefield Earth_Arena = new Battlefield("Earth Arena", 0.8f,1.1f, 1.1f,0.8f,1.2f);
-
+    
     //arena randomizer
     public static Battlefield getRandomArena() 
     {
@@ -78,4 +71,15 @@ public class Battlefield
         //target.takeDamage((short) modifiedDamage);
     }
     */
+    
+    public static final Battlefield Fire_Arena = new Battlefield("Fire Arena", 1.2f, 0.8f, 1.0f, 1.0f, 1.0f);
+
+    public static final Battlefield Ice_Arena = new Battlefield("Ice Arena", 0.8f, 1.2f,1.1f,1.0f,0.9f);
+
+    public static final Battlefield Lightning_Arena = new Battlefield("Lightning Arena",1.1f,0.9f,0.8f,1.2f,1.0f);
+
+    public static final Battlefield Water_Arena = new Battlefield("Water Arena",0.8f, 1.1f,1.5f, 1.2f, 0.8f);
+
+    public static final Battlefield Earth_Arena = new Battlefield("Earth Arena", 0.8f,1.1f, 1.1f,0.8f,1.2f);
+
 }
