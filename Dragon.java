@@ -75,22 +75,50 @@ public class Dragon
         else if(move.bytType==2)
         {
             //if the attack is ice type
-            if(target.bytType==2)
+            if(target.bytType==1)
             {
-                //if target is ice buff damage
-                damage*=1.2;
+                //nerf damage
+                damage*=0.8;
             }
             if(target.bytType==3)
             {
-                //if target is water nerff damage
+                //if target is water buff damage
+                damage*=1.2;
+            }
+            if(target.bytType==5)
+            {
+                //if target is lighting nerff damage
+                damage*=0.8;
+            }
+        }
+        else if(move.bytType==3)
+        {
+            //if attack is water type
+            if(target.bytType==1)
+            {
+                //buff damage
+                damage*=1.2;
+            }
+            if(target.bytType==2)
+            {
+                //buff damage
+                damage*=0.8;
+            }
+            if(target.bytType==4)
+            {
+                //buff damage
                 damage*=0.8;
             }
             if(target.bytType==5)
             {
-                //if target is groud nerff damage
-                damage*=0.8;
+                //buff damage
+                damage*=1.2;
             }
+            
         }
+        
+        
+        
         
         
         
