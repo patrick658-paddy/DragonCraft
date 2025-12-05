@@ -11,8 +11,8 @@ public class Moves
     byte bytType;
     short shrDmg;
     boolean bolIsHeal;
-    float fltEffect;
-    String strEffect;
+    float fltEffectChance;
+    String strEffectName;
     short shrSkillCost;
     short shrSkillGrant;
     
@@ -22,8 +22,8 @@ public class Moves
         this.bytType = t;
         this.shrDmg = d;
         this.bolIsHeal = h;
-        this.fltEffect = e;
-        this.strEffect = s;
+        this.fltEffectChance = e;
+        this.strEffectName = s;
         this.shrSkillCost = c;
         this.shrSkillGrant = g;
     }
@@ -31,7 +31,7 @@ public class Moves
     public String toString()
     {
         return this.strName + "\nType: " + this.bytType + "\nDamage: " + this.shrDmg + "\nHeal? " 
-        + this.bolIsHeal + "\nEffect:" + this.strEffect + "\nSkill Cost: " + this.shrSkillCost + "\nSkill Grant: "
+        + this.bolIsHeal + "\nEffect:" + this.strEffectName + "\nSkill Cost: " + this.shrSkillCost + "\nSkill Grant: "
         + this.shrSkillGrant;
     }
 }
