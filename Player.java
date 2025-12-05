@@ -5,6 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+import java.util.Scanner;
 import java.util.ArrayList;
 public class Player
 {
@@ -23,6 +24,7 @@ public class Player
     {
         System.out.println("Pick your Dragon");
         
+        System.out.println();
     }
     
     public void upgradeDragon(byte bytLevel)

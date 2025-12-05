@@ -39,14 +39,14 @@ public class Battlefield
     public float getEarthModifier() { return earthModifier; }
 
     //DAMAGE MODIFIER
-    public float applyModifier(byte abilityType, float baseDamage) {
+    public int applyModifier(byte abilityType, int baseDamage) {
         switch (abilityType) {
             // 1 = fire, 2 = ice, 3 = water, 4 = lightning, 5 = earth
-            case 1: return baseDamage * fireModifier;
-            case 2: return baseDamage * iceModifier;
-            case 3: return baseDamage * waterModifier;
-            case 4: return baseDamage * lightningModifier;
-            case 5: return baseDamage * earthModifier;
+            case 1: return (int)(baseDamage * fireModifier);
+            case 2: return (int)(baseDamage * iceModifier);
+            case 3: return (int)(baseDamage * waterModifier);
+            case 4: return (int)(baseDamage * lightningModifier);
+            case 5: return (int)(baseDamage * earthModifier);
             
             default: return baseDamage;
         }

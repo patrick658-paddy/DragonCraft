@@ -37,7 +37,7 @@ public class Dragon
     }
     
     
-    public void attack(Dragon target, Moves move, Battlefield arena)
+    public int attack(Dragon target, Moves move, Battlefield arena)
     {
         //calculate did the move's status effect lands
         byte random=(byte)((Math.random()*100)+1);
@@ -116,13 +116,78 @@ public class Dragon
             }
             
         }
+        else if(move.bytType==4)
+        {
+            //if attack is water type
+            if(target.bytType==5)
+            {
+                //nerf
+                damage*=0.8;
+            }
+            if(target.bytType==2)
+            {
+                //buff damage
+                damage*=1.2;
+            }
+            if(target.bytType==3)
+            {
+                //buff damage
+                damage*=1.2;
+            }
+            if(target.bytType==4)
+            {
+                //buff damage
+                damage*=0.8;
+            }
+            
+        }
+        else if(move.bytType==5)
+        {
+            //if attack is water type
+            if(target.bytType==3)
+            {
+                //nerf
+                damage*=0.8;
+            }
+            if(target.bytType==4)
+            {
+                //buff damage
+                damage*=1.2;
+            }
+            if(target.bytType==2)
+            {
+                //buff damage
+                damage*=1.2;
+            }
+            if(target.bytType==5)
+            {
+                //buff damage
+                damage*=0.8;
+            }
+            
+        }
         
-        
-        
-        
-        
+        //now inplement arena buff or nerff
+        damage=arena.applyModifier(move.bytType,damage);
+        return damage;
+    }
+    
+    public void takeDamage(int damage)
+    {
+        this.shrHealth-=damage;
+        if(this.shrHealth<0)
+        {
+            this.shrHealth=0;
+        }
+    }
+    
+    
+    public boolean isAlive()
+    {
         
     }
+    
+    
     
     
     
