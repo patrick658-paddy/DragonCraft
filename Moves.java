@@ -27,4 +27,11 @@ public class Moves
         this.shrSkillCost = c;
         this.shrSkillGrant = g;
     }
+    
+    public String toString()
+    {
+        return this.strName + "\nType: " + this.bytType + "\nDamage: " + this.shrDmg + "\nHeal? " 
+        + this.bolIsHeal + "\nEffect:" + this.strEffect + "\nSkill Cost: " + this.shrSkillCost + "\nSkill Grant: "
+        + this.shrSkillGrant;
+    }
 }

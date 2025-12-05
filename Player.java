@@ -18,4 +18,9 @@ public class Player
         this.DragonList = d;
         this.bytDragon = ad;
     }
+    
+    public void pickDragon()
+    {
+        System.out.println("Pick your Dragon");
+    }
 }
