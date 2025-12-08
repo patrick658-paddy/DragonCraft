@@ -27,6 +27,7 @@ public class Player
         byte bytDragon = 0;
         String Dragon = "";
         boolean doWhile = true;
+
         
         do
         {
@@ -51,6 +52,7 @@ public class Player
             }
         }
         while (doWhile == true);
+
     }
     
     
@@ -62,6 +64,7 @@ public class Player
         
         Upgrade = new Scanner(System.in).nextLine().toUpperCase();
         do
+        {
             if(Upgrade == "YES")
             {
                 doWhile = false;
@@ -75,8 +78,9 @@ public class Player
             {
                 System.out.println("Error Please input Yes or No");
                 doWhile = true;
-
+                
             }
+        }
         while (doWhile == true);
     }
 }
