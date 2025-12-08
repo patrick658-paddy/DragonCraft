@@ -33,7 +33,7 @@ public class TestClass
       
 
         Moves Thunderbolt = new Moves ("Thunderbolt", (byte)5, (short)500, false, (float)0.5, "Shocked", (short)50, (short)0);
-
+        Moves Thunder_Punch = new Moves ("Thunder Punch", (byte)5,(short)250, false, (float)0.6, "Shocked", (short)40, (short)0);
         
         Moves Bite = new Moves ("Bite", (byte)0, (short)400, false, (float)0, " ", (short)15, (short)0);
         
