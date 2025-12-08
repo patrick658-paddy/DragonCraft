@@ -18,7 +18,16 @@ public class TestClass
         
         Moves Splash = new Moves ("Splash", (byte)2, (short)250, false,(float)0, " ", (short)10, (short)0);
         Moves Water_Pump = new Moves ("Water Pump", (byte)2, (short)400, false, (float)0, " ", (short)20, (short)0);
+
         Moves Water_Shuriken = new Moves("Water Shuriken", (byte)2, (short)500, false, (float)0, "", (short)50, (short)0);
+
+
+        
+        
+        
+        
+
+        
         
         Moves Freeze = new Moves ("Freeze", (byte)3, (short)100, false, (float)0.6, "Frozen", (short)30, (short)0);
         Moves Icicle = new Moves ("Icicle", (byte)3, (short)400, false, (float)0.1, "Frozen", (short)40, (short)0);
@@ -37,8 +46,6 @@ public class TestClass
       
         
         Moves Thunderbolt = new Moves ("Thunderbolt", (byte)5, (short)500, false, (float)0.5, "Shocked", (short)50, (short)0);
-
-
 
         
         Moves Bite = new Moves ("Bite", (byte)0, (short)400, false, (float)0, " ", (short)15, (short)0);
