@@ -27,8 +27,6 @@ public class Player
         byte bytDragon = 0;
         String Dragon = "";
         boolean doWhile = true;
-<<<<<<< HEAD
-=======
         
         do
         {
@@ -53,33 +51,7 @@ public class Player
             }
         }
         while (doWhile == true);
->>>>>>> 875e374cb9c33d1c68058d673559f3cb1a6c63ea
-        
-        do
-        {
-            System.out.println("Do you want to change dragons? \nYes \nNo");
-            Dragon = new Scanner(System.in).nextLine().toUpperCase();
-            if(Dragon == "YES")
-            {
-                bytDragon++;
-                doWhile = false;
-                
-                System.out.println("Dragon selected " + DragonList.get(bytDragon));
-                
-            }
-            else if (Dragon == "NO")
-            {
-                doWhile = false;
-            }
-            else
-            {
-                System.out.println("Error Please input Yes or No");
-                doWhile = true;
-            }
-        }
-        while (doWhile == true);
-        
-        System.out.println();
+
     }
     
     
