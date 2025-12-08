@@ -8,6 +8,8 @@
 import java.util.ArrayList;
 public class TestClass
 {
+    
+    
     public void CreateMoves()
     {
         Moves Fireball = new Moves ("Fireball", (byte)1, (short)450, false, (float)0.2, "Burn", (short)40, (short)0);

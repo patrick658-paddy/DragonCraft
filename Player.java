@@ -24,11 +24,31 @@ public class Player
     {
         System.out.println("Pick your Dragon");
         
-        System.out.println();
     }
     
     public void upgradeDragon(byte bytLevel)
     {
+        String Upgrade;
+        boolean doWhile = true;
+        System.out.println("Do you want to upgrade your active Dragon? \nYes \nNo");
         
+        Upgrade = new Scanner(System.in).nextLine().toUpperCase();
+        do
+            if(Upgrade == "YES")
+            {
+                doWhile = false;
+                
+            }
+            else if (Upgrade == "NO")
+            {
+                doWhile = false;
+            }
+            else
+            {
+                System.out.println("Error Please input Yes or No");
+                doWhile = true;
+
+            }
+        while (doWhile == true);
     }
 }
