@@ -21,7 +21,7 @@ public class Dragon
     String strStatusEffect;
     short shrSp;
     //constructor to initilize the atat for each dragon
-    public Dragon(String n,short m,short a,byte l,short d,byte t ,ArrayList<Moves>mo,short s )
+    public Dragon(String n,short m,short a,byte l,short d,byte t ,ArrayList<Moves>mo )
     {
         this. strName=n;
         this. shrMaxHp=m;
@@ -33,7 +33,7 @@ public class Dragon
         this.bytType=t;
         this.moveList=mo;
         this.strStatusEffect="NULL";
-        short shrSp=s;
+        short shrSp=0;
     }
     
     
@@ -169,6 +169,11 @@ public class Dragon
         
         //now inplement arena buff or nerff
         damage=arena.applyModifier(move.bytType,damage);
+        // add xp to the dragon
+        this.shrXp=(byte)((Math.random()*100)+100);
+        //prompt the user they gained this amount of xp
+        System.out.println("You got " + this.shrXp + " xp. "+(100+(100*this.bytLevel)-this.shrXp)+" Away from level up!");
+        
         return damage;
     }
     
@@ -184,11 +189,40 @@ public class Dragon
     
     public boolean isAlive()
     {
+        //check if the hP is bigger than zero 
+        if(this.shrHealth>0)
+        {
+            //return truen when alive
+            return true;
+        }
+        else
+        {
+            //return false when not
+            return false;
+        }
+    }
+    
+    public void levelUp()
+    {
+        //if xp reaches the max xp cap
+        if(this.shrXp>=100+(100*this.bytLevel))
+        {
+            //reset the xp and make show the over part still goes back
+            this.shrXp-=100+(100*this.bytLevel);
+            //Level up
+            this.bytLevel++;
+            System.out.println("Congratulation You leveled up. You are now level " + this);
+        }
         
     }
     
+    //toString methods a nethod for the output if each object
     
-    
-    
-    
+    public String toString()
+    {
+        return "Dragon's name " + this. strName +" Dragon's maxHp " + this. shrMaxHp+" Dragon's attack " +
+        this.shrAttack + " Dragon's defence " + this.shrArmor + " Dragon's level " + this.bytLevel + 
+        " Dragon's Type " + this.bytType;
+        
+    }
 }
