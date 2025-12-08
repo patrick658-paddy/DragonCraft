@@ -39,9 +39,6 @@ public class TestClass
       
 
         Moves Cleanse = new Moves("Cleanse", (byte)2, (short)300, true, (float)0, " ", (short)50, (short)0);
-    
-    
-        
       
         
         Moves Thunderbolt = new Moves ("Thunderbolt", (byte)5, (short)500, false, (float)0.5, "Shocked", (short)50, (short)0);
