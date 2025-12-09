@@ -25,11 +25,12 @@ public class TestClass
             GameDecision = new Scanner(System.in).nextByte();
             if(GameDecision == 1)
             {
-                                                    
+                Game app = new Game();
+                app.startBattle();
             }
             else if (GameDecision == 2)
             {
-                        
+                            
             }
             else
             {
