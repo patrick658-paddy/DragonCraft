@@ -20,6 +20,11 @@ public class Player
         this.DragonList = d;
         this.bytActiveDragon = ad;
     }
+     public Player()
+    {
+        this.strName = "Unknown";
+        this.bytActiveDragon = -1;
+    }
     
     //method to pick active dragon
     public void pickDragon()

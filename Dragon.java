@@ -24,12 +24,12 @@ public class Dragon
     public Dragon(String n,short m,short a,byte l,short d,byte t ,ArrayList<Moves>mo )
     {
         this. strName=n;
-        this. shrMaxHp=m;
+        this. shrMaxHp=(short)(m+l*25);
         this.shrHealth=this.shrMaxHp;
-        this.shrAttack=a;
+        this.shrAttack=(short)(a+l*25);
         this.bytLevel=l;
         this.shrXp=0;
-        this.shrArmor=d;
+        this.shrArmor=(short)(d+l*25);
         this.bytType=t;
         this.moveList=mo;
         this.strStatusEffect="NULL";
@@ -179,7 +179,17 @@ public class Dragon
     
     public void takeDamage(int damage)
     {
-        this.shrHealth-=damage;
+        //check if defence is too strong to deal damage
+        if (damage-this .shrArmor<0)
+        {
+            //then deal only 1 dmg
+            this.shrHealth-=1;
+        }
+        else
+        {
+            
+            this.shrHealth-=damage-this .shrArmor;
+        }
         if(this.shrHealth<0)
         {
             this.shrHealth=0;
@@ -192,7 +202,7 @@ public class Dragon
         //check if the hP is bigger than zero 
         if(this.shrHealth>0)
         {
-            //return truen when alive
+            //return true when alive
             return true;
         }
         else
