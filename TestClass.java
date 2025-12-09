@@ -18,26 +18,22 @@ public class TestClass
         
         System.out.println("____Welcome to DragonCraft____");
         
-        System.out.println("1. new game \n2. Continue game \n3. Exit game");
+        System.out.println("1. Enter \n2. Exit game");
         
         do
         {
             GameDecision = new Scanner(System.in).nextByte();
             if(GameDecision == 1)
             {
-                                
+                                                    
             }
             else if (GameDecision == 2)
-            {
-                    
-            }
-            else if (GameDecision == 3)
             {
                         
             }
             else
             {
-                System.out.println("Error please input 1 2 3");
+                System.out.println("Error please input 1 or 2");
                 bolDoWhile =  true;
             }
         }while (bolDoWhile == true);
