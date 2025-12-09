@@ -25,7 +25,7 @@ public class Game
          enemy.strName="Liam";
         //generate a random dradon into the enemy roster
          
-         enemmy.DragonList.add();
+         enemy.DragonList.add();
          
     }
 }
