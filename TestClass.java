@@ -16,7 +16,7 @@ public class TestClass
         byte GameDecision;
         boolean bolDoWhile = true;
         
-        System.out.println("____Welcome to DragonCraft____");
+        System.out.println("____ Welcome to DragonCraft ____");
         
         System.out.println("1. Enter \n2. Exit game");
         
@@ -27,10 +27,12 @@ public class TestClass
             {
                 Game app = new Game();
                 app.startBattle();
+                bolDoWhile = false;
             }
             else if (GameDecision == 2)
             {
-                                    
+                System.out.println("____ Exiting DragonCraft ____");
+                bolDoWhile = false;                        
             }
             else
             {
@@ -76,6 +78,7 @@ public class TestClass
         LightiningMovesList.add(new Moves ("Volt Burst", (byte)5, (short)55, false, (float)0.4, "Shocked", (short)50, (short)0));
 
         BaseMovesList.add(new Moves ("Bite", (byte)0, (short)40, false, (float)0, " ", (short)15, (short)0));
+        BaseMovesList.add(new Moves ("Tackle", (byte)0, (short)30, false, (float)0, " ", (short)10, (short)0));
         
         BaseMovesList.add(new Moves ("Heal", (byte)0, (short)20, true, (float)0, " ", (short)50, (short)0));
     }
