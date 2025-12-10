@@ -92,6 +92,7 @@ public class Game
         //Use an arrayList so you can use a 
         switch(bytType)
         {
+            //if fire
             case 1:
                 {
                     for(int i=0;i<FireMovesList.size();i++)
