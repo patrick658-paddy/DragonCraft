@@ -16,7 +16,7 @@ public class TestClass
         byte GameDecision;
         boolean bolDoWhile = true;
         
-        System.out.println("____Welcome to DragonCraft____");
+        System.out.println("____ Welcome to DragonCraft ____");
         
         System.out.println("1. Enter \n2. Exit game");
         
@@ -27,10 +27,12 @@ public class TestClass
             {
                 Game app = new Game();
                 app.startBattle();
+                bolDoWhile = false;
             }
             else if (GameDecision == 2)
             {
-                                    
+                System.out.println("____ Exiting DragonCraft ____");
+                bolDoWhile = false;                        
             }
             else
             {
@@ -39,8 +41,9 @@ public class TestClass
             }
         }while (bolDoWhile == true);
     }
+
     
-   
+
 
     
     public static void startUp()
