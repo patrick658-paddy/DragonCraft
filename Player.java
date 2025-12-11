@@ -60,4 +60,22 @@ public class Player
 
     }
     
+    public byte ChooseMove()
+    {
+        byte bytChooseMove;
+        boolean bolDoWhile = true;
+        System.out.println("Choose your move 1-4");
+        
+        do
+        {
+            bytChooseMove = new Scanner(System.in).nextByte();
+            if(bytChooseMove > 4)
+            {
+                bolDoWhile = false;
+            }
+            else if (b
+        }while(bolDoWhile == true);
+        return bytChooseMove;
+    }
+    
 }

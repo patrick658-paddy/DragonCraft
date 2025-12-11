@@ -27,6 +27,7 @@ public class TestClass
             {
                 Game app = new Game();
                 app.startBattle();
+                startUp();
                 bolDoWhile = false;
             }
             else if (GameDecision == 2)
@@ -41,14 +42,6 @@ public class TestClass
             }
         }while (bolDoWhile == true);
     }
-
-    
-
-
-    
-
-
-
     
     public static void startUp()
     {
