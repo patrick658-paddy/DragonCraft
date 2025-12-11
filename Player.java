@@ -58,34 +58,6 @@ public class Player
 
     }
     
-    
-    public void upgradeDragon(byte bytLevel)
-    {
-        String Upgrade;
-        boolean doWhile = true;
-        System.out.println("Do you want to upgrade your active Dragon? \nYes \nNo");
-        
-        Upgrade = new Scanner(System.in).nextLine().toUpperCase();
-        do
-        {
-            if(Upgrade == "YES")
-            {
-                doWhile = false;
-                
-            }
-            else if (Upgrade == "NO")
-            {
-                doWhile = false;
-            }
-            else
-            {
-                System.out.println("Error Please input Yes or No");
-                doWhile = true;
-                
-            }
-        }
-        while (doWhile == true);
-    }
     // get dragon amount in their roster
     public byte getDragonAmount()
     {
@@ -101,5 +73,29 @@ public class Player
             out+=this.DragonList.get(i);
         }
         return out;
+    }
+    
+    public byte ChooseMove()
+    {
+        byte ChooseMove;
+        boolean bolDoWhile = true;
+        
+        System.out.println("Choose your move \n1-4");
+        
+        do
+        {
+            ChooseMove = new Scanner(System.in).nextByte();
+            if(ChooseMove >= 4 || ChooseMove < 0)
+            {
+                bolDoWhile = false;
+            }
+            else
+            {
+                System.out.println("Error please input 1-4");
+                bolDoWhile = true;
+            }
+        } while(bolDoWhile == true);
+        
+        return ChooseMove;
     }
 }
