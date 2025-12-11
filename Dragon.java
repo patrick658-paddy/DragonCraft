@@ -244,9 +244,9 @@ public class Dragon
     
     public String toString()
     {
-        return "Dragon's name " + this. strName +" Dragon's maxHp " + this. shrMaxHp+" Dragon's attack " +
-        this.shrAttack + " Dragon's defence " + this.shrArmor + " Dragon's level " + this.bytLevel + 
-        " Dragon's Type " + this.bytType + "\n Move List: " + outputMoves();  
+        return "Dragon's name " + this. strName +" \nDragon's maxHp " + this. shrMaxHp+" \nDragon's attack " +
+        this.shrAttack + " \nDragon's defence " + this.shrArmor + " \nDragon's level " + this.bytLevel + 
+        " \nDragon's Type " + this.bytType + "\nMove List: " + outputMoves();  
         
     }
     
