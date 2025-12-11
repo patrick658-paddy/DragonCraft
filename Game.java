@@ -88,7 +88,7 @@ public class Game
             arena=arena.getRandomArena();
             //output the info of the arena 
             System.out.println("--------------------------------------------------");
-            System.out.println("Battle start: \nYou got to a new Arena here are the info:");
+            System.out.println("Battle start: \nYou got to a new Arena here is the info:");
             System.out.println(arena);
             //game loop per battle loops when both enemy's and player's dragon are alive
             do
