@@ -7,7 +7,7 @@
  */
 //import random library to randomzie arena
 import java.util.Random;
-
+//Hello
 public class Battlefield 
 {
     private String arenaName;
@@ -59,8 +59,7 @@ public class Battlefield
         return "Name: " + this.arenaName + "\tFire dmg Modifier: " + this.fireModifier + "\tice dmg Modifier: " + this.iceModifier + 
         "\tLightning dmg Modifier: " + this.lightningModifier + "\tWater dmg Modifier: " + this.waterModifier + "\tEarth dmg Modifier" + this.earthModifier;
     }
-    //arena randomizer
-    /*
+    
     public static Battlefield getRandomArena() 
     {
         Battlefield[] allArenas = {Fire_Arena, Ice_Arena, Lightning_Arena,  Water_Arena, Earth_Arena};
@@ -77,6 +76,7 @@ public class Battlefield
         float modifiedDamage = applyModifier(move.getType(), move.getDamage());
         //target.takeDamage((short) modifiedDamage);
     }
+    */
     
     
    
@@ -89,6 +89,6 @@ public class Battlefield
     public static final Battlefield Water_Arena = new Battlefield("Water Arena",0.8f, 1.1f,1.5f, 1.2f, 0.8f);
 
     public static final Battlefield Earth_Arena = new Battlefield("Earth Arena", 0.8f,1.1f, 1.1f,0.8f,1.2f);
-    */
+    
 
 }

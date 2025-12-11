@@ -1,8 +1,8 @@
 
 /**
- * Description: .
+ * Description: 
  *
- * @author (your name)
+ * Paddy Ji
  * @version (a version number or a date)
  */
 
@@ -11,7 +11,7 @@ public class Game
 {
     private Player player1=new Player();
     private Player enemy=new Player();
-    ArrayList <Battlefield> arena=new ArrayList<Battlefield>();
+    Battlefield arena;
     static int gameCount=0;
     //create arrayList to store each type of the move
     ArrayList<Moves> FireMovesList = new ArrayList<Moves>();
@@ -31,19 +31,19 @@ public class Game
         String answer="";
         //boolean variable shows If player all dragon was dead
         boolean isAllDead=false;
-        //create an variable that can hold an random index in the arena list so we can rdomize arena per battle
-        byte arenaIndex=-1;
+        
 
         //assign each move to the list
         createMoves();
         //put(declear) all arena into the arrayList
-        createArena();
+       
         //create 3 random Dragon and add it to the player's roster if they have no dragon in the team yet
         if(player1.getDragonAmount()<=0)
         {
             for(int i=0;i<3;i++)
             {
                 player1.DragonList.add(createRandomDragon());
+                System.out.println("----------------------------------------------");
 
             }
         }
@@ -82,23 +82,23 @@ public class Game
         }
         //game loop between battle(a run) only stops looping when all players dragon are dead
         
-        //do 
-        //{
-            //generate a random index for arena 
-            arenaIndex=(byte)(Math.random()*arena.size());
+        do 
+        {
+            //generate a random  for arena 
+            arena=arena.getRandomArena();
             //output the info of the arena 
             System.out.println("--------------------------------------------------");
-            System.out.println("Battle start: \nYou got to a new Arena here is the info:");
-            System.out.println(arena.get(arenaIndex));
+            System.out.println("Battle start: \nYou got to a new Arena here are the info:");
+            System.out.println(arena);
             //game loop per battle loops when both enemy's and player's dragon are alive
-            //do
-            //{
+            do
+            {
 
-            //while(player1.DragonList.get(player1.bytActiveDragon).isAlive()&&enemy.DragonList.get(enemy.bytActiveDragon).isAlive());
-        //}while(!isAllDead);
+            }while(player1.DragonList.get(player1.bytActiveDragon).isAlive()&&enemy.DragonList.get(enemy.bytActiveDragon).isAlive());
+        }while(!isAllDead);
         
     }
-
+    //create ethod to save all ppossibale moves into different arrayList base on the type
     public void createMoves()
     {
 
@@ -232,12 +232,5 @@ public class Game
         //set the new dragon into the spot
         player1.DragonList.set(index-1,New);
     }
-    public void createArena()
-    {
-        arena.add(new Battlefield("The Ember Maw Pit",1.3f,0.8f,1.0f,1.0f,1.0f ));
-        arena.add(new Battlefield("Shivergrave Coliseum",0.8f,1.2f,1.0f,1.1f,0.9f ));
-        arena.add(new Battlefield("The Howling Thunder Crypt",1.1f,0.9f,1.2f,0.8f,1.0f ));
-        arena.add(new Battlefield("The Sunken Howl Arena",0.8f,1.1f,1.2f,1.5f,0.8f ));
-        arena.add(new Battlefield("The Buried Titan’s Hall",0.8f,1.1f,0.8f,1.1f,1.2f ));
-    }
+   
 }
