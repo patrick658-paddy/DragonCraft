@@ -14,9 +14,8 @@ public class Moves
     float fltEffectChance;
     String strEffectName;
     short shrSkillCost;
-    short shrSkillGrant;
     
-    public Moves(String n, byte t, short d, boolean h, float e, String s, short c, short g)
+    public Moves(String n, byte t, short d, boolean h, float e, String s, short c)
     {
         this.strName = n;
         this.bytType = t;
@@ -25,13 +24,11 @@ public class Moves
         this.fltEffectChance = e;
         this.strEffectName = s;
         this.shrSkillCost = c;
-        this.shrSkillGrant = g;
     }
     
     public String toString()
     {
         return this.strName + "\nType: " + this.bytType + "\nDamage: " + this.shrDmg + "\nHeal? " 
-        + this.bolIsHeal + "\nEffect:" + this.strEffectName + "\nSkill Cost: " + this.shrSkillCost + "\nSkill Grant: "
-        + this.shrSkillGrant;
+        + this.bolIsHeal + "\nEffect:" + this.strEffectName + "\nSkill Cost: " + this.shrSkillCost;
     }
 }
