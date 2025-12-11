@@ -69,12 +69,17 @@ public class Player
         do
         {
             bytChooseMove = new Scanner(System.in).nextByte();
-            if(bytChooseMove > 4)
+            if(bytChooseMove >= 4 || bytChooseMove < 0)
             {
                 bolDoWhile = false;
             }
-            else if (b
+            else
+            {
+                System.out.println("Error please input  1-4");
+                bolDoWhile = true;
+            }
         }while(bolDoWhile == true);
+        
         return bytChooseMove;
     }
     
