@@ -93,7 +93,7 @@ public class Game
             //game loop per battle loops when both enemy's and player's dragon are alive
             do
             {
-
+                
             }while(player1.DragonList.get(player1.bytActiveDragon).isAlive()&&enemy.DragonList.get(enemy.bytActiveDragon).isAlive());
         }while(!isAllDead);
         
