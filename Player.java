@@ -14,11 +14,9 @@ public class Player
     ArrayList<Dragon> DragonList = new ArrayList<>();
     byte bytActiveDragon;
     
-    public Player(String n, ArrayList<Dragon> d, byte ad)
+    public Player(String n)
     {
         this.strName = n;
-        this.DragonList = d;
-        this.bytActiveDragon = ad;
     }
      public Player()
     {
@@ -60,27 +58,48 @@ public class Player
 
     }
     
-    public byte ChooseMove()
+    
+    public void upgradeDragon(byte bytLevel)
     {
-        byte bytChooseMove;
-        boolean bolDoWhile = true;
-        System.out.println("Choose your move 1-4");
+        String Upgrade;
+        boolean doWhile = true;
+        System.out.println("Do you want to upgrade your active Dragon? \nYes \nNo");
         
+        Upgrade = new Scanner(System.in).nextLine().toUpperCase();
         do
         {
-            bytChooseMove = new Scanner(System.in).nextByte();
-            if(bytChooseMove >= 4 || bytChooseMove < 0)
+            if(Upgrade == "YES")
             {
-                bolDoWhile = false;
+                doWhile = false;
+                
+            }
+            else if (Upgrade == "NO")
+            {
+                doWhile = false;
             }
             else
             {
-                System.out.println("Error please input  1-4");
-                bolDoWhile = true;
+                System.out.println("Error Please input Yes or No");
+                doWhile = true;
+                
             }
-        }while(bolDoWhile == true);
-        
-        return bytChooseMove;
+        }
+        while (doWhile == true);
+    }
+    // get dragon amount in their roster
+    public byte getDragonAmount()
+    {
+        return (byte)(this.DragonList.size());
     }
     
+    public String outputAllDragon()
+    {
+        String out="";
+        for(int i=0;i<this.DragonList.size();i++)
+        {
+            out+="\n Dragon" +(i+1);
+            out+=this.DragonList.get(i);
+        }
+        return out;
+    }
 }

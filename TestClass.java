@@ -32,7 +32,6 @@ public class TestClass
             else if (GameDecision == 2)
             {
                 System.out.println("____ Exiting DragonCraft ____");
-                startUp();
                 bolDoWhile = false;                        
             }
             else
@@ -42,9 +41,17 @@ public class TestClass
             }
         }while (bolDoWhile == true);
     }
+
+    
+
+
+    
+
+
+
     
     public static void startUp()
     {
-        System.out.println("Rise as a dragon master and battle the chaos consuming the land.");
+        System.out.println("Rise as a dragon rider and battle the chaos consuming the land.");
     }
 }

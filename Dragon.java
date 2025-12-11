@@ -19,7 +19,9 @@ public class Dragon
     byte bytType; //1 = fire, 2 =  ice, 3 = water, 4 = lighting, 5 = earth  
     ArrayList<Moves> moveList =new ArrayList<Moves>();
     String strStatusEffect;
+    byte effectTurnCount=0;
     short shrSp;
+    static byte dragonCount=0;
     //constructor to initilize the atat for each dragon
     public Dragon(String n,short m,short a,byte l,short d,byte t ,ArrayList<Moves>mo )
     {
@@ -47,8 +49,20 @@ public class Dragon
         if(random<=move.fltEffectChance*100)
         {
             //assign the effect onto the dragon
-            this.strStatusEffect=move.strEffectName;
-            
+            target.strStatusEffect=move.strEffectName;
+            if(target.strStatusEffect.equalsIgnoreCase("Burn"))
+            {
+                //if Dragon got burned set bit burn for 3 turns
+                this.effectTurnCount+=3;
+            }  
+            else if(target.strStatusEffect.equalsIgnoreCase("Frozen"))
+            {
+                this.effectTurnCount+=1;
+            }
+            else if(target.strStatusEffect.equalsIgnoreCase("Shock"))
+            {
+                this.effectTurnCount+=3;
+            }
         }
         //populate the variable with the base damage it will deal;
         damage=move.shrDmg+this.shrAttack;
@@ -232,7 +246,20 @@ public class Dragon
     {
         return "Dragon's name " + this. strName +" Dragon's maxHp " + this. shrMaxHp+" Dragon's attack " +
         this.shrAttack + " Dragon's defence " + this.shrArmor + " Dragon's level " + this.bytLevel + 
-        " Dragon's Type " + this.bytType;
+        " Dragon's Type " + this.bytType + "\n Move List: " + outputMoves();  
         
+    }
+    
+    
+    public String outputMoves()
+    {
+        String out=" ";
+        for(int i=0;i<moveList.size();i++)
+        {
+            out+="\n Move" +i;
+            out+=moveList.get(i);
+            out+="\n";
+        }
+        return out;
     }
 }

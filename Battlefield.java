@@ -20,7 +20,7 @@ public class Battlefield
 
     //Constructor
     public Battlefield(String arenaName,float fireModifier,float iceModifier, 
-    float waterModifier,float lightningModifier, float earthModifier) 
+    float lightningModifier,float waterModifier ,float earthModifier) 
     {
         this.arenaName = arenaName;
         this.fireModifier = fireModifier;
@@ -53,8 +53,14 @@ public class Battlefield
     }
 
     
-    
+    //to String for outputing the arena info(Paddy)
+    public String toString()
+    {
+        return "Name: " + this.arenaName + "\tFire dmg Modifier: " + this.fireModifier + "\tice dmg Modifier: " + this.iceModifier + 
+        "\tLightning dmg Modifier: " + this.lightningModifier + "\tWater dmg Modifier: " + this.waterModifier + "\tEarth dmg Modifier" + this.earthModifier;
+    }
     //arena randomizer
+    /*
     public static Battlefield getRandomArena() 
     {
         Battlefield[] allArenas = {Fire_Arena, Ice_Arena, Lightning_Arena,  Water_Arena, Earth_Arena};
@@ -63,6 +69,7 @@ public class Battlefield
         return allArenas[rand.nextInt(allArenas.length)];
     }
     
+    
     /*
     //Recieve attack
     public void receiveAttack(Dragon attacker, Ability move,/ Dragon target) 
@@ -70,8 +77,9 @@ public class Battlefield
         float modifiedDamage = applyModifier(move.getType(), move.getDamage());
         //target.takeDamage((short) modifiedDamage);
     }
-    */
     
+    
+   
     public static final Battlefield Fire_Arena = new Battlefield("Fire Arena", 1.2f, 0.8f, 1.0f, 1.0f, 1.0f);
 
     public static final Battlefield Ice_Arena = new Battlefield("Ice Arena", 0.8f, 1.2f,1.1f,1.0f,0.9f);
@@ -81,5 +89,6 @@ public class Battlefield
     public static final Battlefield Water_Arena = new Battlefield("Water Arena",0.8f, 1.1f,1.5f, 1.2f, 0.8f);
 
     public static final Battlefield Earth_Arena = new Battlefield("Earth Arena", 0.8f,1.1f, 1.1f,0.8f,1.2f);
+    */
 
 }
