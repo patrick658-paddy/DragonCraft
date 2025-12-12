@@ -2,8 +2,8 @@
 /**
  * Description: .
  *
- * @author (your strName)
- * @version (a version number or a date)
+ * @author (Paddy, Abdulla, Eric)
+ * @version (15 Dec, 2025)
  */
 import java.util.ArrayList;
 public class Dragon

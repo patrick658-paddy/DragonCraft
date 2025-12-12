@@ -1,9 +1,9 @@
 
 /**
- * Description: abcd . aaaa
+ * Description: This class will create the player's dragons allow the player to switch their dragon being used and choose the move the player wants to do.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Eric, Paddy, Abdulla)
+ * @version (15 Dec, 2025)
  */
 import java.util.Scanner;
 import java.util.ArrayList;

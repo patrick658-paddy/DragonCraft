@@ -1,9 +1,9 @@
 
 /**
- * Description: 
+ * Description: This class is the actual game that will create enemys, randomize the arena, and is where the player will be able to input to play the game.
  *
- * Paddy Ji
- * @version (a version number or a date)
+ * Paddy Ji, Abdulla, Eric
+ * @version (15 Dec, 2025)
  */
 
 import java.util.*;

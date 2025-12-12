@@ -1,12 +1,13 @@
 
 /**
- * Description: .
+ * Description: This class creates the constructor for the abilities the dragons will use aswell as making output format for the moves created.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Eric, Paddy, Abdulla)
+ * @version (15 Dec, 2025)
  */
 public class Moves
 {
+    //declare variables for move
     String strName;
     byte bytType;
     short shrDmg;
@@ -15,7 +16,8 @@ public class Moves
     String strEffectName;
     short shrSkillCost;
     short shrSkillGrant;
-    
+
+    //constructor 
     public Moves(String n, byte t, short d, boolean h, float e, String s, short c, short g)
     {
         this.strName = n;
@@ -28,6 +30,7 @@ public class Moves
         this.shrSkillGrant = g;
     }
     
+    //toString
     public String toString()
     {
         return this.strName + "\nType: " + this.bytType + "\nDamage: " + this.shrDmg + "\nHeal? " 

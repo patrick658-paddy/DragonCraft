@@ -1,9 +1,9 @@
 
 /**
- * abcd
+ * Description: Testclass this class will be the start up menu and will call the game class for the actual game after player input
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Eric, Abdulla, Paddy)
+ * @version (15 Dec, 2025)
  */
 import java.util.Scanner;
 import java.util.ArrayList;
