@@ -184,34 +184,34 @@ public class Game
     public void createMoves()
     {
 
-        FireMovesList.add(new Moves ("Fireball", (byte)1, (short)45, false, (float)0.2, "Burn", (short)40, (short)0));
-        FireMovesList.add(new Moves ("Fireclaw", (byte)1, (short)50, false, (float)0.2, "Burn", (short)30, (short)0));
-        FireMovesList.add(new Moves ("Firebreath", (byte)1, (short)60, false, (float)0.1, "Burn", (short)50, (short)0));
-        FireMovesList.add(new Moves ("Flame Slash", (byte)1, (short)40, false, (float)0.2, "Burn", (short)20, (short)0));
+        FireMovesList.add(new Moves ("Fireball", (byte)1, (short)45, false, (float)0.2, "Burn", (short)40));
+        FireMovesList.add(new Moves ("Fireclaw", (byte)1, (short)50, false, (float)0.2, "Burn", (short)30));
+        FireMovesList.add(new Moves ("Firebreath", (byte)1, (short)60, false, (float)0.1, "Burn", (short)50));
+        FireMovesList.add(new Moves ("Flame Slash", (byte)1, (short)40, false, (float)0.2, "Burn", (short)20));
 
-        WaterMovesList.add(new Moves ("Splash", (byte)2, (short)25, false,(float)0, " ", (short)10, (short)0));
-        WaterMovesList.add(new Moves ("Water Pump", (byte)2, (short)40, false, (float)0, " ", (short)20, (short)0));
-        WaterMovesList.add(new Moves("Water Shuriken", (byte)2, (short)50, false, (float)0, "", (short)50, (short)0));
-        WaterMovesList.add(new Moves("Cleanse", (byte)2, (short)30, true, (float)0, " ", (short)50, (short)0));
+        WaterMovesList.add(new Moves ("Splash", (byte)2, (short)25, false,(float)0, " ", (short)10));
+        WaterMovesList.add(new Moves ("Water Pump", (byte)2, (short)40, false, (float)0, " ", (short)20));
+        WaterMovesList.add(new Moves("Water Shuriken", (byte)2, (short)50, false, (float)0, "", (short)50));
+        WaterMovesList.add(new Moves("Cleanse", (byte)2, (short)30, true, (float)0, " ", (short)50));
 
-        IceMovesList.add(new Moves ("Freeze", (byte)3, (short)10, false, (float)0.6, "Frozen", (short)30, (short)0));
-        IceMovesList.add(new Moves ("Icicle", (byte)3, (short)40, false, (float)0.1, "Frozen", (short)40, (short)0));
-        IceMovesList.add(new Moves ("Glacier", (byte)3, (short)50, false, (float)0.2, "Frozen", (short)50, (short)0));
-        IceMovesList.add(new Moves ("Frostbite", (byte)3, (short)35, false, (float)0.25, "Frozen", (short)30, (short)0));
+        IceMovesList.add(new Moves ("Freeze", (byte)3, (short)10, false, (float)0.6, "Frozen", (short)30));
+        IceMovesList.add(new Moves ("Icicle", (byte)3, (short)40, false, (float)0.1, "Frozen", (short)40));
+        IceMovesList.add(new Moves ("Glacier", (byte)3, (short)50, false, (float)0.2, "Frozen", (short)50));
+        IceMovesList.add(new Moves ("Frostbite", (byte)3, (short)35, false, (float)0.25, "Frozen", (short)30));
 
-        EarthMovesList.add(new Moves ("Earthquake", (byte)4, (short)40, false, (float)0, " ", (short)40, (short)0));
-        EarthMovesList.add(new Moves ("Rock Slide", (byte)4, (short)50, false, (float)0, " ", (short)50, (short)0));
-        EarthMovesList.add(new Moves ("Fissure", (byte)4, (short)50, false, (float)0, " ", (short)50, (short)0));
-        EarthMovesList.add(new Moves ("Stone Crash", (byte)4, (short)45, false, (float)0, " ", (short)40, (short)0));
+        EarthMovesList.add(new Moves ("Earthquake", (byte)4, (short)40, false, (float)0, " ", (short)40));
+        EarthMovesList.add(new Moves ("Rock Slide", (byte)4, (short)50, false, (float)0, " ", (short)50));
+        EarthMovesList.add(new Moves ("Fissure", (byte)4, (short)50, false, (float)0, " ", (short)50));
+        EarthMovesList.add(new Moves ("Stone Crash", (byte)4, (short)45, false, (float)0, " ", (short)40));
 
-        LightiningMovesList.add(new Moves ("Thunderbolt", (byte)5, (short)50, false, (float)0.5, "Shocked", (short)50, (short)0));
-        LightiningMovesList.add(new Moves ("Thunder Punch", (byte)5,(short)25, false, (float)0.6, "Shocked", (short)40, (short)0));
-        LightiningMovesList.add(new Moves ("Storm Strike", (byte)5, (short)45, false, (float)0.3, "Shocked", (short)40, (short)0));
-        LightiningMovesList.add(new Moves ("Volt Burst", (byte)5, (short)55, false, (float)0.4, "Shocked", (short)50, (short)0));
+        LightiningMovesList.add(new Moves ("Thunderbolt", (byte)5, (short)50, false, (float)0.5, "Shocked", (short)50));
+        LightiningMovesList.add(new Moves ("Thunder Punch", (byte)5,(short)25, false, (float)0.6, "Shocked", (short)40));
+        LightiningMovesList.add(new Moves ("Storm Strike", (byte)5, (short)45, false, (float)0.3, "Shocked", (short)40));
+        LightiningMovesList.add(new Moves ("Volt Burst", (byte)5, (short)55, false, (float)0.4, "Shocked", (short)50));
 
-        BaseMovesList.add(new Moves ("Bite", (byte)0, (short)40, false, (float)0, " ", (short)15, (short)0));
+        BaseMovesList.add(new Moves ("Bite", (byte)0, (short)40, false, (float)0, " ", (short)15));
 
-        BaseMovesList.add(new Moves ("Heal", (byte)0, (short)20, true, (float)0, " ", (short)50, (short)0));
+        BaseMovesList.add(new Moves ("Heal", (byte)0, (short)20, true, (float)0, " ", (short)50));
     }
 
     public Dragon createRandomDragon()
