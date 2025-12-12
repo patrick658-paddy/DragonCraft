@@ -21,22 +21,22 @@ public class Game
     ArrayList<Moves> LightiningMovesList = new ArrayList<Moves>();
     ArrayList<Moves> BaseMovesList = new ArrayList<Moves>();
     //create arrayList to store all battle field
-    
+
     public void startBattle()
     {
-       
+
         //statement for trycatch block
         boolean tryCatch=false;
         //String thaat save any user input in String
         String answer="";
         //boolean variable shows If player all dragon was dead
         boolean isAllDead=false;
-        
 
         //assign each move to the list
         createMoves();
-        //put(declear) all arena into the arrayList
-       
+
+        
+
         //create 3 random Dragon and add it to the player's roster if they have no dragon in the team yet
         if(player1.getDragonAmount()<=0)
         {
@@ -78,25 +78,107 @@ public class Game
                 System.out.println(player1.outputAllDragon());
             }
 
-            
         }
-        //game loop between battle(a run) only stops looping when all players dragon are dead
-        
+        // Create enemy dragons if empty
+        if(enemy.getDragonAmount() <= 0)
+        {
+            for(int i=0; i<3; i++)
+            {   
+                enemy.DragonList.add(createRandomDragon());
+            }
+        }
+
+        // Set active dragons
+        player1.bytActiveDragon = 0;
+        enemy.bytActiveDragon = 0;
+
+        boolean keepPlaying = true; //variable
         do 
         {
-            //generate a random  for arena 
-            arena=arena.getRandomArena();
-            //output the info of the arena 
+            isAllDead = false; // reset for this battle
+            // generate a random arena 
+            arena = arena.getRandomArena();
             System.out.println("--------------------------------------------------");
             System.out.println("Battle start: \nYou got to a new Arena here is the info:");
             System.out.println(arena);
-            //game loop per battle loops when both enemy's and player's dragon are alive
+
+            // INNER BATTLE LOOP (player vs enemy)
             do
             {
+                Dragon playerD = player1.DragonList.get(player1.bytActiveDragon);
+                Dragon enemyD  = enemy.DragonList.get(enemy.bytActiveDragon);
+
+                if (!playerD.isAlive()) {
+                    System.out.println("Your dragon " + playerD.strName + " has fainted!");
+                    isAllDead = true;
+                    break;
+                }
+
+                if (!enemyD.isAlive()) {
+                    System.out.println("Enemy dragon " + enemyD.strName + " has fainted!");
+                    isAllDead = true;
+                    break;
+                }
+
+                System.out.println("\nYour Dragon: " + playerD.strName + " HP: " + playerD.shrHealth + "/" + playerD.shrMaxHp);
+                System.out.println("Enemy Dragon: " + enemyD.strName + " HP: " + enemyD.shrHealth + "/" + enemyD.shrMaxHp);
+
+                printBattleHeader();
                 
-            }while(player1.DragonList.get(player1.bytActiveDragon).isAlive()&&enemy.DragonList.get(enemy.bytActiveDragon).isAlive());
-        }while(!isAllDead);
-        
+                // PLAYER TURN --------------------
+                System.out.println("\nChoose a move:");
+                for (int i = 0; i < playerD.moveList.size(); i++)
+                {
+                    System.out.println((i+1) + ". " + playerD.moveList.get(i).strName);
+                }
+
+                int moveChoice = new Scanner(System.in).nextInt() - 1;
+                Moves playerMove = playerD.moveList.get(moveChoice);
+
+                int dmg = playerD.attack(enemyD, playerMove, arena);
+                enemyD.takeDamage(dmg);
+
+                System.out.println("Your " + playerD.strName + " used " + playerMove.strName + " and dealt " + dmg + " damage!");
+                System.out.println("Enemy " + enemyD.strName + " has " + enemyD.shrHealth + "/" + enemyD.shrMaxHp + " HP remaining.");
+
+                if (!enemyD.isAlive())
+                {
+                    System.out.println("Enemy " + enemyD.strName + " fainted!");
+                    break;
+                }
+
+                // ENEMY TURN --------------------
+                int enemyMoveIndex = (int)(Math.random() * enemyD.moveList.size());
+                Moves enemyMove = enemyD.moveList.get(enemyMoveIndex);
+
+                int enemyDamage = enemyD.attack(playerD, enemyMove, arena);
+                playerD.takeDamage(enemyDamage);
+
+                System.out.println("Enemy " + enemyD.strName + " used " + enemyMove.strName + " and dealt " + enemyDamage + " damage!");
+                System.out.println("Your " + playerD.strName + " has " + playerD.shrHealth + "/" + playerD.shrMaxHp + " HP remaining.");
+
+                if (!playerD.isAlive())
+                {
+                    System.out.println("Your dragon " + playerD.strName + " fainted!");
+                    break;
+                }
+
+            } while(player1.DragonList.get(player1.bytActiveDragon).isAlive() &&
+            enemy.DragonList.get(enemy.bytActiveDragon).isAlive());
+
+            // AFTER EACH BATTLE, ask if player wants to continue
+            if(!isAllDead)
+            {
+                System.out.println("Do you want to continue battling? Yes/No");
+                String answer2 = new Scanner(System.in).nextLine();
+                if(answer.equalsIgnoreCase("no"))
+                {
+                    keepPlaying = false;
+                    System.out.println("Exiting DragonCraft. See you next time!");
+                }
+            }
+
+        } while(keepPlaying && !isAllDead);
     }
     //create ethod to save all ppossibale moves into different arrayList base on the type
     public void createMoves()
@@ -132,71 +214,68 @@ public class Game
         BaseMovesList.add(new Moves ("Heal", (byte)0, (short)20, true, (float)0, " ", (short)50, (short)0));
     }
 
-    public Dragon createRandomDragon( )
+    public Dragon createRandomDragon()
     {
-
-        //generate a random dradon into the enemy roster
-        //generate a random dradon into the enemy roster
-        //A list of dragon name
-        String[] dragons = {"Alduin", "Smaug", "Toothless", "Draco", "Firnen", 
+        // List of possible dragon names
+        String[] dragons = {
+                "Alduin", "Smaug", "Toothless", "Draco", "Firnen", 
                 "Glaurung", "Ancalagon", "Saphira", "Viserion", "Rhaegal", "Drogon", 
-                "Meraxes", "Vermithrax", "Falkor", "Shenron", "Norbert", "Kilgharrah", "Eborsisk", 
-                "Levithan", "Hydraxis", "Pyrexis", "Obsidrax", "Stormclaw", "Ignivar", "Zephyros"};
-        String dragonName =dragons[(int)(Math.random() *25)];
-        //declare enemy gragon level that will get higher progressivly
-        byte level=(byte)(Math.random() *5+Game.gameCount);
-        short shrMaxHp=(short)(Math.random() *20+100);
-        short shrAttack=(short)(Math.random() *25+50);
-        short shrArmor=(short)(Math.random() *10+50);
-        byte bytType=(byte)(Math.random()*4+1);
-        ArrayList<Moves> moveList = new ArrayList<Moves>();
-        //Use 
+                "Meraxes", "Vermithrax", "Falkor", "Shenron", "Norbert", "Kilgharrah", 
+                "Eborsisk", "Levithan", "Hydraxis", "Pyrexis", "Obsidrax", 
+                "Stormclaw", "Ignivar", "Zephyros"
+            };
+
+        // Choose a random name
+        String dragonName = dragons[(int)(Math.random() * dragons.length)];
+
+        // Level scaling depending on game count
+        byte level = (byte)((int)(Math.random() * 5) + Game.gameCount);
+
+        // Base stats
+        short shrMaxHp   = (short)((int)(Math.random() * 20) + 100);
+        short shrAttack  = (short)((int)(Math.random() * 25) + 50);
+        short shrArmor   = (short)((int)(Math.random() * 10) + 50);
+
+        // FIXED: Correct uniform type generation (1–5)
+        byte bytType = (byte)((int)(Math.random() * 5) + 1);
+
+        // Prepare move list for this dragon
+        ArrayList<Moves> moveList = new ArrayList<>();
+
         switch(bytType)
         {
-                //if fire
-            case 1:
-                {
-                    for(int i=0;i<FireMovesList.size();i++)
-                    {
-                        moveList.add(FireMovesList.get(i));
-                    }
-                    break;
-                }
-            case 2:
-                {
-                    for(int i=0;i<IceMovesList.size();i++)
-                    {
-                        moveList.add(IceMovesList.get(i));
-                    }
-                    break;
-                }
-            case 3:
-                {
-                    for(int i=0;i<WaterMovesList.size();i++)
-                    {
-                        moveList.add(WaterMovesList.get(i));
-                    }
-                    break;
-                }
-            case 4:
-                {
-                    for(int i=0;i<LightiningMovesList.size();i++)
-                    {
-                        moveList.add(WaterMovesList.get(i));
-                    }
-                    break;
-                }
-            case 5:
-                {
-                    for(int i=0;i<EarthMovesList.size();i++)
-                    {
-                        moveList.add(WaterMovesList.get(i));
-                    }
-                    break;
-                }
+            case 1: // Fire
+                moveList.addAll(FireMovesList);
+                break;
+
+            case 2: // Ice
+                moveList.addAll(IceMovesList);
+                break;
+
+            case 3: // Water
+                moveList.addAll(WaterMovesList);
+                break;
+
+            case 4: // Lightning
+                moveList.addAll(LightiningMovesList);
+                break;
+
+            case 5: // Earth
+                moveList.addAll(EarthMovesList);
+                break;
         }
 
-        Dragon random = new Dragon(dragonName,shrMaxHp,shrAttack,level,shrArmor,bytType,moveList);
+        // Create the actual dragon
+        Dragon random = new Dragon(
+                dragonName,
+                shrMaxHp,
+                shrAttack,
+                level,
+                shrArmor,
+                bytType,
+                moveList
+            );
+
         System.out.println(random);
         return random;
     }
@@ -232,5 +311,22 @@ public class Game
         //set the new dragon into the spot
         player1.DragonList.set(index-1,New);
     }
-   
+
+    public void printBattleHeader() {
+        System.out.println("""
+                                                   ,===:'.,            `-._
+                                                        `:.`---.__         `-._
+                                                          `:.     `--.         `.
+                  _/  \\    _((o                           \\.        `.         `.
+                 /     \\  /  _  ^^^o               (,,(,    \\.         `.   ____,-`.,
+                /   !   \\/  ! '!!!v'            (,'     `/   \\.   ,--.___`.'
+               !  !  \\ _' ( \\____          ,  ,'  ,--.  `,   \\.;'         `
+               ! . \\ _!\\   \\===^\\)        `{D, {    \\  :    \\;
+                \\ \\_!  / __!                  V,,'    /  /    //
+                 \\!   /    \\                  j;;    /  ,' ,-//.    ,---.      ,
+           (\\_      _/   _\\ )                 \\;'   /  ,' /  _  \\  /  _  \\   ,'/  
+            \\ ^^--^^ __-^ /(__                       \\   `'  / \\  `'  / \\  `.' /  
+             ^^----^^    "^--v'                        `.___,'   `.__,'   `.__,'
+        """);
+    }
 }
