@@ -77,7 +77,6 @@ public class Game
                 changeDragon(add);
                 System.out.println(player1.outputAllDragon());
             }
-
         }
         // Create enemy dragons if empty
         if(enemy.getDragonAmount() <= 0)
@@ -180,7 +179,7 @@ public class Game
 
         } while(keepPlaying && !isAllDead);
     }
-    //create ethod to save all ppossibale moves into different arrayList base on the type
+    //create method to save all possible moves into different arrayList base on the type
     public void createMoves()
     {
 
